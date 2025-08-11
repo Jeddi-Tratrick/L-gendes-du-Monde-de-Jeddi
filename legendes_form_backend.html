@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Légendes du Monde</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Lang Switcher -->
+  <div class="lang-switch">
+    <button onclick="setLang('fr')">FR</button>
+    <button onclick="setLang('en')">EN</button>
+    <button onclick="setLang('es')">ES</button>
+    <button onclick="setLang('de')">DE</button>
+  </div>
+
+  <!-- FR -->
+  <div id="fr" class="lang active">
+    <section>
+      <h2>Bienvenue, voyageur des mots</h2>
+      <p>Voici un feu de camp virtuel où les mots dansent et les récits renaissent...</p>
+    </section>
+
+    <section id="legende-exemple">
+      <h2>🌿 Légende des trois étoiles (Afrique de l'Ouest)</h2>
+      <p><em>Transmise par les griots sous le baobab...</em></p>
+      <p>Il y a bien longtemps, trois sœurs naquirent dans un village oublié...</p>
+    </section>
+
+    <!-- Formulaire relié à Render -->
+    <section id="formulaire">
+      <h2>Soumets ta propre légende</h2>
+      <form action="https://legendes-api.onrender.com/api/legendes" method="POST">
+        <input type="text" name="nom" placeholder="Ton nom" required>
+        <input type="text" name="continent" placeholder="Continent" required>
+        <textarea name="legende" rows="6" placeholder="Ta légende..." required></textarea>
+        <button type="submit">Envoyer</button>
+      </form>
+    </section>
+
+    <section id="dons">
+      <h2>Soutiens ce projet légendaire</h2>
+      <p>Ce site vit grâce à vos dons. Merci !</p>
+      <a href="https://www.paypal.com/donate?business=patrick.letoffe94@gmail.com" class="don-button" target="_blank">💖 Faire un don via PayPal</a>
+    </section>
+
+    <section id="apropos">
+      <h2>À propos</h2>
+      <p>Ce projet est une arche pour les voix du monde...</p>
+    </section>
+  </div>
+
+  <!-- EN -->
+  <div id="en" class="lang">
+    <section>
+      <h2>Welcome, word traveler</h2>
+      <p>This is a virtual campfire where words dance and stories are reborn...</p>
+    </section>
+
+    <section id="formulaire">
+      <h2>Submit your own legend</h2>
+      <form action="https://legendes-api.onrender.com/api/legendes" method="POST">
+        <input type="text" name="nom" placeholder="Your name" required>
+        <input type="text" name="continent" placeholder="Continent" required>
+        <textarea name="legende" rows="6" placeholder="Your legend..." required></textarea>
+        <button type="submit">Submit</button>
+      </form>
+    </section>
+
+    <section id="dons">
+      <h2>Support this legendary project</h2>
+      <p>This site lives thanks to your donations. Thank you!</p>
+      <a href="https://www.paypal.com/donate?business=patrick.letoffe94@gmail.com" class="don-button" target="_blank">💖 Donate via PayPal</a>
+    </section>
+  </div>
+
+  <!-- ES -->
+  <div id="es" class="lang">
+    <section>
+      <h2>Bienvenido, viajero de las palabras</h2>
+      <p>Una hoguera virtual donde las palabras bailan y las historias renacen...</p>
+    </section>
+
+    <section id="formulaire">
+      <h2>Envía tu propia leyenda</h2>
+      <form action="https://legendes-api.onrender.com/api/legendes" method="POST">
+        <input type="text" name="nom" placeholder="Tu nombre" required>
+        <input type="text" name="continent" placeholder="Continente" required>
+        <textarea name="legende" rows="6" placeholder="Tu leyenda..." required></textarea>
+        <button type="submit">Enviar</button>
+      </form>
+    </section>
+
+    <section id="dons">
+      <h2>Apoya este proyecto legendario</h2>
+      <p>Este sitio vive gracias a sus donaciones. ¡Gracias!</p>
+      <a href="https://www.paypal.com/donate?business=patrick.letoffe94@gmail.com" class="don-button" target="_blank">💖 Donar vía PayPal</a>
+    </section>
+  </div>
+
+  <!-- DE -->
+  <div id="de" class="lang">
+    <section>
+      <h2>Willkommen, Wortreisender</h2>
+      <p>Ein virtuelles Lagerfeuer, an dem Wörter tanzen und Geschichten neu geboren werden...</p>
+    </section>
+
+    <section id="formulaire">
+      <h2>Reiche deine eigene Legende ein</h2>
+      <form action="https://legendes-api.onrender.com/api/legendes" method="POST">
+        <input type="text" name="nom" placeholder="Dein Name" required>
+        <input type="text" name="continent" placeholder="Kontinent" required>
+        <textarea name="legende" rows="6" placeholder="Deine Legende..." required></textarea>
+        <button type="submit">Einreichen</button>
+      </form>
+    </section>
+
+    <section id="dons">
+      <h2>Unterstütze dieses legendäre Projekt</h2>
+      <p>Diese Seite lebt dank deiner Spenden. Danke!</p>
+      <a href="https://www.paypal.com/donate?business=patrick.letoffe94@gmail.com" class="don-button" target="_blank">💖 Über PayPal spenden</a>
+    </section>
+  </div>
+
+  <script>
+    function setLang(lang) {
+      document.querySelectorAll('.lang').forEach(el => el.classList.remove('active'));
+      document.getElementById(lang).classList.add('active');
+    }
+  </script>
+</body>
+</html>
